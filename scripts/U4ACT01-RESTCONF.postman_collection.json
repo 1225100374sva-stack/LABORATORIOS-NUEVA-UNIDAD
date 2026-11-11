@@ -1,0 +1,967 @@
+{
+  "info": {
+    "name": "coleccion u3",
+    "description": "Práctica RESTCONF con Postman sobre Catalyst 8000v (IOS XE 17.12) - DevNet Sandbox.\nAlumno: Sebastian Villegas Arredondo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{username}}"
+      },
+      {
+        "key": "password",
+        "value": "{{password}}"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "host",
+      "value": "10.10.20.48"
+    },
+    {
+      "key": "username",
+      "value": "developer"
+    },
+    {
+      "key": "password",
+      "value": "C1sco12345"
+    }
+  ],
+  "item": [
+    {
+      "name": "Parte 1 - Desafío 1 (native JSON/XML)",
+      "item": [
+        {
+          "name": "GET native (JSON)",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/Cisco-IOS-XE-native:native",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "Cisco-IOS-XE-native:native"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        },
+        {
+          "name": "GET native (XML)",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+xml"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/Cisco-IOS-XE-native:native",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "Cisco-IOS-XE-native:native"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Parte 2 - Consultar interfaces",
+      "item": [
+        {
+          "name": "GET interfaces (XML)",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+xml"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        },
+        {
+          "name": "GET interfaces (JSON)",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        },
+        {
+          "name": "GET Loopback0 (JSON)",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces/interface=Loopback0",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces",
+                "interface=Loopback0"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        },
+        {
+          "name": "GET datos operacionales (interfaces-state)",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces-state",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces-state"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        },
+        {
+          "name": "Desafío 2 - GET GigabitEthernet1 (JSON)",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet1",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces",
+                "interface=GigabitEthernet1"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Parte 3 - Loopback99 (guía)",
+      "item": [
+        {
+          "name": "PUT crear Loopback99",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 201\", () => pm.response.to.have.status(201));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces/interface=Loopback99",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces",
+                "interface=Loopback99"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ietf-interfaces:interface\": {\n    \"name\": \"Loopback99\",\n    \"description\": \"Loopback99 - Sebastian Villegas Arredondo\",\n    \"type\": \"iana-if-type:softwareLoopback\",\n    \"enabled\": true,\n    \"ietf-ip:ipv4\": {\n      \"address\": [\n        {\n          \"ip\": \"99.99.99.99\",\n          \"netmask\": \"255.255.255.0\"\n        }\n      ]\n    }\n  }\n}"
+            }
+          }
+        },
+        {
+          "name": "DELETE Loopback99",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces/interface=Loopback99",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces",
+                "interface=Loopback99"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Desafíos 3-5 - Loopback propia",
+      "item": [
+        {
+          "name": "Desafío 3 - PUT crear Loopback74",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 201\", () => pm.response.to.have.status(201));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces/interface=Loopback74",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces",
+                "interface=Loopback74"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ietf-interfaces:interface\": {\n    \"name\": \"Loopback74\",\n    \"description\": \"Interfaz creada por Sebastian Villegas Arredondo\",\n    \"type\": \"iana-if-type:softwareLoopback\",\n    \"enabled\": true,\n    \"ietf-ip:ipv4\": {\n      \"address\": [\n        {\n          \"ip\": \"74.74.74.74\",\n          \"netmask\": \"255.255.255.0\"\n        }\n      ]\n    }\n  }\n}"
+            }
+          }
+        },
+        {
+          "name": "Verificar Loopback74",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces/interface=Loopback74",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces",
+                "interface=Loopback74"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        },
+        {
+          "name": "Desafío 4 - PATCH deshabilitar Loopback74",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces/interface=Loopback74",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces",
+                "interface=Loopback74"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ietf-interfaces:interface\": {\n    \"name\": \"Loopback74\",\n    \"description\": \"Interfaz creada por Sebastian Villegas Arredondo - deshabilitada con PATCH\",\n    \"enabled\": false\n  }\n}"
+            }
+          }
+        },
+        {
+          "name": "Verificar PATCH Loopback74",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces/interface=Loopback74",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces",
+                "interface=Loopback74"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        },
+        {
+          "name": "Desafío 5 - DELETE Loopback74",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 204\", () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces/interface=Loopback74",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces",
+                "interface=Loopback74"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reflexión - Errores provocados",
+      "item": [
+        {
+          "name": "401 - credenciales incorrectas",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 401\", () => pm.response.to.have.status(401));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "developer"
+                },
+                {
+                  "key": "password",
+                  "value": "Cisco123"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "404 - URL mal escrita (interfases)",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfases",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfases"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo"
+          }
+        },
+        {
+          "name": "400 - JSON mal formado (POST)",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/yang-data+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ietf-interfaces:interface\": {\n    \"name\": \"Loopback74\",\n    \"description\": \"JSON roto - Sebastian Villegas Arredondo\"\n    \"enabled\": true\n  }\n"
+            }
+          }
+        },
+        {
+          "name": "415 - Content-Type incorrecto (POST)",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "disableBodyPruning": true
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status 415\", () => pm.response.to.have.status(415));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Alumno",
+                "value": "Sebastian Villegas Arredondo"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              },
+              {
+                "key": "Accept",
+                "value": "application/yang-data+json"
+              }
+            ],
+            "url": {
+              "raw": "https://{{host}}/restconf/data/ietf-interfaces:interfaces",
+              "protocol": "https",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "restconf",
+                "data",
+                "ietf-interfaces:interfaces"
+              ]
+            },
+            "description": "Solicitud realizada por: Sebastian Villegas Arredondo",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ietf-interfaces:interface\": {\n    \"name\": \"Loopback74\",\n    \"description\": \"Prueba 415 - Sebastian Villegas Arredondo\",\n    \"type\": \"iana-if-type:softwareLoopback\",\n    \"enabled\": true,\n    \"ietf-ip:ipv4\": {\n      \"address\": [\n        {\n          \"ip\": \"10.0.0.1\",\n          \"netmask\": \"255.255.255.0\"\n        }\n      ]\n    }\n  }\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
