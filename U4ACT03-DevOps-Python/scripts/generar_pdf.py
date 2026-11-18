@@ -45,6 +45,8 @@ FIGURAS = [
     ("01_pytest_local.png", "Pruebas locales: <b>pytest -v</b> en mi computadora, 5 passed."),
     ("02_actions_verde.png", "Pestaña Actions, primer push: el workflow <b>CI del validador de correos</b> "
                              "con los jobs <b>test → deploy</b> en check verde."),
+    ("03a_log_test.png", "Log del job <b>test</b> en el runner de GitHub: el paso Ejecutar pruebas corre "
+                         "<b>pytest -v</b> y pasan las 5 pruebas."),
     ("03_log_deploy.png", "Log del job <b>deploy</b>: se ejecutó después de test y simuló el despliegue."),
     ("04_actions_rojo.png", "Push con la prueba rota a propósito: <b>test</b> falla (cruz roja) y "
                             "<b>deploy</b> queda omitido (skipped)."),
@@ -233,14 +235,14 @@ def pagina(c, n):
              "Sí se ejecutaron los dos, con check verde. Primero corrió <b>test</b> (checkout, Python 3.12, "
              "pip install, pytest: 5 passed) y cuando terminó arrancó <b>deploy</b>, que imprimió «Desplegando "
              "a producción...» y «Versión lista para usar.». En el diagrama aparecen unidos: test → deploy "
-             "(Figuras 2 y 3).")
+             "(Figuras 2, 3 y 4).")
         caja(c, 41, 294, 570, 358,
              "Cambié test_correo_valido para que esperara False. El job <b>test</b> falló con cruz roja "
              "(1 failed, 4 passed) y el job <b>deploy no se ejecutó</b>: aparece como omitido (skipped) porque "
-             "depende de test con needs. No se desplegó nada (Figuras 4 y 5).")
+             "depende de test con needs. No se desplegó nada (Figuras 5 y 6).")
         caja(c, 41, 395, 570, 445,
              "Regresé la línea a <i>assert es_correo_valido(\"alumno@escuela.org\") == True</i>, hice commit y "
-             "push, y los dos jobs volvieron al check verde: 5 passed y deploy ejecutado (Figura 6).")
+             "push, y los dos jobs volvieron al check verde: 5 passed y deploy ejecutado (Figura 7).")
         caja(c, 41, 578, 570, 735,
              "Porque el archivo YAML se guarda en el repositorio y queda en el historial de git: cualquiera con "
              "acceso (o todo el mundo, si el repositorio es público como este) podría leer la contraseña y "
@@ -266,7 +268,7 @@ def pagina(c, n):
              "<b>3.</b> Falló el job <b>test</b>, en el step «Ejecutar pruebas» (Process completed with exit "
              "code 1); el job <b>deploy</b> quedó omitido (skipped).<br/>Mensaje: "
              "<i>FAILED test_validador.py::test_correo_valido - AssertionError: assert True == False</i>. "
-             "Resumen: <b>1 failed, 4 passed</b> (Figuras 4 y 5).")
+             "Resumen: <b>1 failed, 4 passed</b> (Figuras 5 y 6).")
         caja(c, 41, 192, 570, 292,
              "El log indica que test_correo_valido falló en el assert: la función devolvió <b>True</b> "
              "(<i>where True = es_correo_valido('alumno@escuela.org')</i>) pero la prueba esperaba "
@@ -279,7 +281,7 @@ def pagina(c, n):
              "(5 passed) y después hice commit y push de la corrección.")
         caja(c, 41, 450, 570, 515,
              "El pipeline volvió al <b>check verde</b>: test pasó (5 passed) y después corrió deploy, que "
-             "mostró «Desplegando a producción...». Ver Figura 6 en el anexo de evidencias.")
+             "mostró «Desplegando a producción...». Ver Figura 7 en el anexo de evidencias.")
         caja(c, 41, 578, 570, 730,
              "Lo puede provocar un compañero que cambia una función sin revisar las pruebas, un merge mal "
              "resuelto, la actualización de una librería, un error de dedo en el YAML o yo mismo con prisa. "
