@@ -18,21 +18,30 @@ REPORT = os.path.join(CROP, "reporte.pdf")
 
 
 def recortar_capturas():
-    """Recorta el fondo de pantalla de cada captura y la comprime a JPG."""
+    """Recorta cada captura para que se lea en la hoja.
+
+    Postman: arriba la franja del encabezado (nombre del workspace del alumno) y
+    abajo solo el panel de la solicitud/respuesta, sin barras laterales. Ambas
+    piezas salen de la misma captura original (evidencias/ conserva el original).
+    """
     from PIL import Image as PI
     for f in sorted(os.listdir(EVID)):
         if not f.endswith(".png"):
             continue
         im = PI.open(os.path.join(EVID, f)).convert("RGB")
-        if f.startswith(("01", "02")):
-            box = (455, 285, 3030, 1895)      # ventana de Postman al centro
-        elif f.startswith("10"):
-            box = (0, 0) + im.size             # captura de la Terminal
+        if f.startswith("10"):                                   # captura de la Terminal
+            c = im
         else:
-            box = (30, 88, 3420, 2190)         # Postman maximizado
-        c = im.crop(box)
-        c.thumbnail((2000, 2000))
-        c.save(os.path.join(CROP, f.replace(".png", ".jpg")), quality=85)
+            if f.startswith(("01", "02")):                       # ventana de Postman al centro
+                cab, panel = (818, 293, 2243, 359), (1092, 427, 2516, 1886)
+            else:                                                # Postman maximizado
+                cab, panel = (391, 93, 2316, 166), (884, 232, 2809, 2174)
+            a, b = im.crop(cab), im.crop(panel)
+            c = PI.new("RGB", (b.width, a.height + 6 + b.height), (90, 90, 90))
+            c.paste(a, (0, 0))
+            c.paste(b, (0, a.height + 6))
+        c.thumbnail((2400, 2400))
+        c.save(os.path.join(CROP, f.replace(".png", ".jpg")), quality=88)
 
 
 recortar_capturas()
